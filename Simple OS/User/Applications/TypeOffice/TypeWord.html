@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Word Processor</title>
+    <style>
+      #editor {
+        height: 400px;
+        width: 100%;
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+      }
+      #editor:focus {
+        outline: none;
+      }
+      #toolbar {
+        display: flex;
+        justify-content:end;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-bottom: black;
+      }
+      #toolbar .button {
+        margin-right: 5px;
+        padding: 5px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        background-color: #0078ba;
+        border-radius: 20px;
+        border: 1px solid #000;
+        color: #fff;
+        }
+        #close-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+          }
+          a {
+            text-decoration: none; /* Removes underline */
+            color: #000000; /* Changes link color to blue */
+            position: absolute;
+            left: 50px;
+            top: 20px;
+          }
+    </style>
+  </head>
+  <body>
+    <div id="toolbar">
+        <button id="close-button" title="Close"  onclick="window.location.href='/Simple OS/system/Desktop.html'">
+            <img src="/Simple OS/system/icons/x.svg" width="40px" height="40px"  >
+          </button> 
+            <a href="">TypeOffice</a>
+      <button onclick="formatText('bold')" class="button">Bold</button>
+      <button onclick="formatText('italic')" class="button">Italic</button>
+      <button onclick="formatText('underline')" class="button">Underline</button>
+      <button onclick="formatText('strikeThrough')" class="button">Strikethrough</button>
+      <button onclick="formatText('justifyLeft')"class="button">Align Left</button>
+      <button onclick="formatText('justifyCenter')" class="button">Align Center</button>
+      <button onclick="formatText('justifyRight')" class="button">Align Right</button>
+      <button onclick="formatText('insertUnorderedList')" class="button">Bullets</button>
+      <button onclick="formatText('insertOrderedList')" class="button">Numbering</button>
+      <button onclick="formatText('createLink')" class="button">Link</button>
+      <button onclick="formatText('insertImage')"class="button">Image</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+    <script>
+      function formatText(command, value) {
+        document.execCommand(command, false, value);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+  <img src="wallp.svg" id="wall" alt="" width="100%" height="100%">
+  <div  class="topbar">
+    <div class="apps">
+        <div class="img">
+        <a href="menu.html">
+            <img src="sq.svg" alt="" width="20px" height="20px">
+        </a>
+        </div>
+        <p id="p2">DEV prev 6.971.55</p>
+    </div>
+    <div class="time">
+        <p id="p1" class="clock"></p>
+    </div>
+    <div id="status" class="popup-btn">
+        <i class="fa-solid fa-network-wired"></i>
+        <i class="fa-solid fa-bolt"></i>
+        <i class="fa-solid fa-code"></i>
+        <!-- battery, settings, shutdown -->
+        <!-- also add serach in the left and notification in the right (most) -->
+        <!-- topbar also in todo -->
+        html is fun
+</div>
+</div>
+
+<div class="popup-menu">
+    <ul>
+        <!--  settings, power, account  -->
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-gear"></i>
+        <i class="fa-solid fa-power"></i>
+        <b>can u see me?</b>
+    </ul>
+</div>
+
+<div class="taskbar">
+<div class="task-icons">
+  <div class="task-icon-file">
+            <a href="/Simple OS/system/File manager.html">
+                <img src="/Simple OS/system/icons/file browz.svg" alt="">
+            </a>
+        </div>
+  <div class="task-icon-browse">
+            <a href="browser.html">
+                <img src="/Simple OS/system/icons/browse.svg" alt="">
+            </a>
+        </div>
+  <div class="task-icon-settings">
+            <a href="settings.html">
+                <img src="/Simple OS/system/icons/settings.svg" alt="">
+            </a>
+        </div>
+  <div class="task-icon-todo">
+            <a href="/Simple OS/User/Applications/todo/todo.html">
+                <img src="/Simple OS/system/icons/todo.svg" alt="">
+            </a>
+        </div>
+  <div class="task-icon"></div>
+  <div class="task-icon"></div>
+  <div class="task-icon"></div>
+  <div class="task-icon"></div>
+  <div class="task-icon-super">
+            <a href="more_menu.html">
+                <img src="sq.svg" alt="">
+            </a>
+        </div>
+</div>
+</div>  <div class="div">
+  <h1>Todo List</h1><button id="close-button" title="Close"  onclick="window.location.href='/Simple OS/system/Desktop.html'">
+    <img src="/Simple OS/system/icons/x.svg" width="40px" height="40px"  >
+  </button> 
+  <form>
+    <input type="text" id="todoInput" placeholder="Add task...">
+    <button type="button" class="button" onclick="addTodo()">Add</button>
+  </form>
+  <ul id="todoList">
+  </ul>
+</div>
+  <script>
+    let todoList = [];
+
+function addTodo() {
+  let todoInput = document.getElementById("todoInput");
+  let todoText = todoInput.value.trim();
+
+  if (todoText !== "") {
+    let todoItem = { text: todoText };
+    todoList.push(todoItem);
+    saveTodoList();
+
+    let todoListElement = document.getElementById("todoList");
+    let todoItemElement = document.createElement("li");
+    todoItemElement.innerHTML = `<span class="todo-text">${todoText}</span><button class="todo-delete" onclick="deleteTodoItem(this)">Delete</button>`;
+    todoListElement.appendChild(todoItemElement);
+
+    todoInput.value = "";
+  }
+}
+
+function deleteTodoItem(deleteButtonElement) {
+  let todoItemElement = deleteButtonElement.parentElement;
+  let todoItemIndex = Array.prototype.indexOf.call(todoItemElement.parentElement.children, todoItemElement);
+
+  todoList.splice(todoItemIndex, 1);
+  saveTodoList();
+
+  todoItemElement.remove();
+}
+
+function loadTodoList() {
+  let storedTodoList = localStorage.getItem("todoList");
+
+  if (storedTodoList) {
+    todoList = JSON.parse(storedTodoList);
+
+    let todoListElement = document.getElementById("todoList");
+
+    for (let todoItem of todoList) {
+      let todoItemElement = document.createElement("li");
+      todoItemElement.innerHTML = `<span class="todo-text">${todoItem.text}</span><button class="todo-delete" onclick="deleteTodoItem(this)">Delete</button>`;
+      todoListElement.appendChild(todoItemElement);
+    }
+  }
+}
+
+function saveTodoList() {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+}
+
+window.onload = function() {
+  loadTodoList();
+};
+
+  </script>
+  <script>
+    var date = new Date();
+	var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+	document.getElementById("p1").innerHTML = current_time;
+  </script>
+</body>
+</html>
+<style>
+      
+      h1 {
+        text-align: center;
+        top: 10px;
+        padding-top: none;
+      }
+      
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        margin-right: 10px;
+      }
+      
+      .button {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        background-color: #4CAF50;
+        color: #FFFFFF;
+        cursor: pointer;
+      }
+      
+      .button:hover {
+        background-color: #3E8E41;
+      }
+      
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .todo-text {
+        flex-grow: 1;
+      }
+      
+      .todo-delete {
+        background-color: #f44336;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      
+      .todo-delete:hover {
+        background-color: #d32f2f;
+      }
+      .div {
+        backdrop-filter: blur(10px);
+        background-color:rgba(0, 0, 0, .60) ;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .background-image {
+        background-image: url('your-image-url-here');
+        background-position: center;
+        height: 100%;
+        width: 100%;
+      }
+      #close-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        right: 5x;
+        top: 20px;
+      }
+      .close:hover {
+        background-color: #FFFFFF;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+      }
+      
+      body {
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: none;
+        margin: none;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to top right, #4d9e68, #4d9b9e);
+    }
+    /* Taskbar */
+    .taskbar {
+			position: absolute;
+			bottom: -65px;
+			left: 33%;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+			color: white;
+			display: flex;
+			align-items: center;
+			padding: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border: rgb(204, 199, 199) 2px solid;
+            border-bottom: none;
+            transition: all .5s ;
+		}
+        .taskbar:hover {
+            bottom: 0px;
+        }
+
+		.taskbar img {
+			height: 40px;
+			margin-right: 10px;
+		}
+
+		.taskbar .task-icons {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1000px;
+			flex-grow: 1;
+			justify-content: center;
+		}
+
+		.taskbar .task-icon {
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			border-radius: 50%;
+			background-color: #5292af;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.taskbar .task-icon:hover {
+			background-color: #333;
+		}
+
+
+    #wall {  
+        width: 100%;
+        height: 100%;
+        font-family: Arial;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .img {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        transition: all .5s;
+    }
+    .img:hover  {
+        background-color: #58585899;
+        height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        left: 5px;
+        border-radius: 20px;
+        padding-top: 5px;
+    }
+    
+    .popup-menu {
+		display: none;
+		position: absolute;
+		background-color: #333;
+		border-radius: 20px;
+		color: white;
+		text-decoration: none;
+		border-radius: 20px;
+		width: 150px;
+        top: 70px;
+        right: 20px;
+	  
+	  }
+	   .popup-btn {
+		  border: none;
+		  border-radius: 20px;
+		  color:white;
+		  text-size-adjust: 40px;
+	   }
+	   .popup-btn:hover {
+		  background-color: none;
+		  border: none;
+		  border-radius: none;
+		  color: rgb(166, 166, 255);
+	   }
+	  
+	  .popup-menu li {
+		padding: 8px 12px;
+		cursor: pointer;
+	  }
+	  
+	  .popup-btn:hover + .popup-menu {
+		display: flex;
+	  text-decoration: none;
+	  }
+	  
+	  .popup-btn:focus + .popup-menu {
+		display: flex;
+		color: white;
+		text-decoration: none;
+	  }
+	  
+
+    /*    Topbar like gnome  */
+    .topbar {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                height: 50px;
+                backdrop-filter: blur(10px);
+                background-color: rgba(0, 0, 0, 0.808);
+                width: 100%;
+                color: white;
+                padding-top: none;
+            }
+            time {
+                padding-top: none;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                align-items: center;
+                align-self: center;
+                transition: all .5s;
+            }
+            time:hover {
+                background-color: #858585;
+                width: 100px;
+            }
+            #p1{
+                font-size: 20px;
+                padding-top: none;
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                transition: all .5s;
+            }
+            #p1:hover {
+                border-radius: 20px;
+                padding-bottom: 3px;
+                left: 49.25%;
+                background-color: #58585899;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+            .apps{
+                text-align: left;
+            }
+            #p2{
+                position: absolute;
+                left: 50px;
+                top: 0px;
+                width: 200px;
+                transition: all .5s;
+                
+            }
+            #p2:hover {
+                background-color: rgba(88, 88, 88,.6);
+                width: 200px;
+                height: 20px;
+                padding-top: 5px;
+                padding-bottom: 3px;
+                border-radius: 20px;
+                padding-left: 10px;
+                position: absolute;
+                top: -5px;
+            }
+            #status {
+                position: absolute;
+                right: 5px;
+                color: white;
+                top: 10px;
+                width: 85px;
+                border-radius: 20px;
+                height: 30px;
+                text-align: center;
+                padding-top: 3px;
+                transition: all .5s;
+            }
+            #status:hover {
+                background-color: #333;
+            }
+      
+    
+</style>
+

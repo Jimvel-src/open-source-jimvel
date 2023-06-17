@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slide Processor</title>
+    <style>
+      #slide-container {
+        height: 500px;
+        width: 800px;
+        border: 1px solid black;
+        position: relative;
+      }
+      .slide {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      .slide.active {
+        display: block;
+      }
+      #slide-nav {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+      }
+      #slide-nav button {
+        margin-right: 5px;
+        padding: 5px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+      }
+      .slide-edit {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid black;
+        padding: 20px;
+        z-index: 1;
+      }
+      .slide-edit.show {
+        display: block;
+      }
+      .slide-edit label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .slide-edit input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .slide-edit button {
+        margin-right: 5px;
+        padding: 5px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slide-container">
+      <div class="slide active" id="slide1">
+        <h1>Slide 1</h1>
+        <p>This is the first slide.</p>
+      </div>
+      <div class="slide" id="slide2">
+        <h1>Slide 2</h1>
+        <p>This is the second slide.</p>
+      </div>
+      <div class="slide" id="slide3">
+        <h1>Slide 3</h1>
+        <p>This is the third slide.</p>
+      </div>
+      <div id="slide-nav">
+        <button onclick="changeSlide(1)">Slide 1</button>
+        <button onclick="changeSlide(2)">Slide 2</button>
+        <button onclick="changeSlide(3)">Slide 3</button>
+        <button onclick="showSlideEdit()">Add Slide</button>
+      </div>
+    </div>
+    <div class="slide-edit" id="slide-edit">
+      <h2>Add Slide</h2>
+      <label for="slide-title">Slide Title:</label>
+      <input type="text" id="slide-title" name="slide-title">
+      <label for="slide-content">Slide Content:</label>
+      <textarea id="slide-content" name="slide-content"></textarea>
+      <button onclick="addSlide()">Add Slide</button>
+      <button onclick="hideSlideEdit()">Cancel</button>
+    </div>
+    <script>
+        var currentSlide = 1;
+var totalSlides = document.getElementsByClassName("slide").length;
+var slideEdit = document.getElementById("slide-edit");
+
+function changeSlide(slideNumber) {
+  if (slideNumber <= totalSlides && slideNumber >= 1) {
+    document.getElementById("slide" + currentSlide).classList.remove("active");
+    document.getElementById("slide" + slideNumber).classList.add("active");
+    currentSlide = slideNumber;
+  }
+}
+
+function showSlideEdit() {
+  slideEdit.classList.add("show");
+}
+
+function hideSlideEdit() {
+  slideEdit.classList.remove("show");
+  document.getElementById("slide-title").value = "";
+  document.getElementById("slide-content").value = "";
+}
+
+function addSlide() {
+  var slideTitle = document.getElementById("slide-title").value;
+  var slideContent = document.getElementById("slide-content").value;
+  totalSlides++;
+  var newSlide = '<div class="slide" id="slide' + totalSlides + '"><h1>' + slideTitle + '</h1><p>' + slideContent + '</p></div>';
+  document.getElementById("slide-container").insertAdjacentHTML("beforeend", newSlide);
+  changeSlide(totalSlides);
+  hideSlideEdit();
+}
+
+    </script>

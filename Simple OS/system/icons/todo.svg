@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2000px"
+   height="2000px"
+   viewBox="0 0 2000 2000"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="todo.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1054"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.16283643"
+     inkscape:cx="399.17356"
+     inkscape:cy="564.98412"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1049" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#f8cd35;fill-opacity:1;stroke-width:0.135"
+       id="rect1646"
+       width="2000"
+       height="2000"
+       x="0"
+       y="0"
+       ry="331.62112" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.135001"
+       id="rect4922"
+       width="420.40979"
+       height="1123.9528"
+       x="-772.6969"
+       y="779.55353"
+       ry="210.2049"
+       transform="matrix(0.70946729,-0.70473837,0.70946729,0.70473837,0,0)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.136697"
+       id="rect4978"
+       width="482.74384"
+       height="1825.9298"
+       x="1423.3798"
+       y="-1265.3671"
+       ry="352.78381"
+       transform="matrix(0.63345891,0.77377633,-0.61481614,0.78867047,0,0)"
+       rx="241.37192" />
+  </g>
+</svg>

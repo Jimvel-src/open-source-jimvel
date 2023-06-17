@@ -1,0 +1,213 @@
+<body>  
+<button onclick="window.location.href='/Simple OS/system/Desktop.html'">
+  <img src="/Simple OS/system/icons/x.svg" width="40px" height="40px"  >
+</button> 
+<a  href="desktop with start.html">Settings </a>
+<div id="mySidenav" class="sidenav">
+  <a class="in" href="/Simple OS/system/desktop with start.html">Settings</a><br>
+    <a href="/Simple OS/system/setting/system.html">System</a>
+    <a href="/Simple OS/system/setting/pers.html">Persenalisation</a>
+    <a href="/Simple OS/system/setting/accse.html">Accesebillity</a>
+    <a href="/Simple OS/system/setting/priandsec.html">Privacy&Security</a>   
+  </div>
+  <div class="contents">                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    <h1 style="size: 110px;">Not implemented yet</h1>
+    <p>If you want to publish your web-apps, then head onto our <a href="https://sites.google.com/view/jimvel">Website</a>
+    </p>
+  </div>
+  <span onclick="openNav()">»</span>
+
+  <div class="taskbar">
+		<div class="task-icons">
+			<div class="task-icon-file">
+                <a href="/Simple OS/system/File manager.html">
+                    <img src="/Simple OS/system/icons/file browz.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-browse">
+                <a href="browser.html">
+                    <img src="/Simple OS/system/icons/browse.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-settings">
+                <a href="settings.html">
+                    <img src="/Simple OS/system/icons/settings.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-todo">
+                <a href="/Simple OS/User/Applications/todo/todo.html">
+                    <img src="/Simple OS/system/icons/todo.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon">
+        <a href="more_menu.html">
+          <img src="sq.svg" alt="">
+      </a>
+      </div>
+		</div>
+	</div>
+</body>
+  <style>
+body {
+  overflow: none;
+}
+    /* Taskbar */
+    .taskbar {
+			position: absolute;
+			bottom: -65px;
+			left: 33%;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+			color: white;
+			display: flex;
+			align-items: center;
+			padding: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border: rgb(204, 199, 199) 2px solid;
+            border-bottom: none;
+            transition: all .5s ;
+		}
+        .taskbar:hover {
+            bottom: 0px;
+        }
+
+		.taskbar img {
+			height: 40px;
+			margin-right: 10px;
+		}
+
+		.taskbar .task-icons {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1000px;
+			flex-grow: 1;
+			justify-content: center;
+		}
+
+		.taskbar .task-icon {
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			border-radius: 50%;
+			background-color: #5292af;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.taskbar .task-icon:hover {
+			background-color: #333;
+		}
+
+    /* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  /* z-index: 1;  Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  color: #000;
+  background-color: #f1f1f1; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  border-right: 2px #181818;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #000000;
+  background-color: rgb(0, 70, 255);
+}
+.sidenav h4 {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav h4:hover {
+  color: #f1f1f1;
+}
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.in {
+  border-left:#f1f1f1 5px solid;
+  height: 32px;
+}
+.contents {
+  padding-left: 260px;
+}
+#close-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 3;
+      }
+</style>
+<script>
+    /* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+
+
+
+</script>

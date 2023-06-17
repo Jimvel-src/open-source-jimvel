@@ -1,0 +1,7 @@
+*windowtype
+-create your html file (js+css+html) and put into folder
+-link via <iframe> to the paage of your need using inside snippets
+*internalmodifications
+-copy the needed file from system & modify
+-paste modified file into /internalmodifications/ 
+-link via redirection html objects

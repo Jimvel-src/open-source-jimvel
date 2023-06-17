@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		body {
+			background-color: #fff;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			overflow: hidden;
+			height: 100%;
+		}
+
+		.taskbar {
+			position: absolute;
+			bottom: 10px;
+			left: 33%;
+			height: 60px;
+			background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+			color: white;
+			display: flex;
+			align-items: center;
+			padding: 10px;
+            border-radius: 20px;
+		}
+
+		.taskbar img {
+			height: 40px;
+			margin-right: 10px;
+		}
+
+		.taskbar .task-icons {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1000px;
+			flex-grow: 1;
+			justify-content: center;
+		}
+
+		.taskbar .task-icon {
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			border-radius: 50%;
+			background-color: #5292af;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.taskbar .task-icon:hover {
+			background-color: #333;
+		}
+		.start {
+			background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+			border-radius: 20px;
+			width: 30%;
+			position: absolute;
+			top: 100px;
+			height: 200px;
+			padding-top: 100px;
+		}
+		.start-ar {
+			padding-left: 40%;
+			width: 100%;
+			align-self: center;
+		}
+		.start-r {
+			align-items: end;
+		}
+			a {
+				text-decoration: none; /* Removes underline */
+				color: #fff; /* Changes link color to blue */
+			  }
+		a:hover {
+			color: #5292af;
+		}
+	</style>
+</head>
+<body>
+    <img src="wallppr-1.png" style="width:100%;height: 100%;" >
+	<div class="taskbar">
+		<img src="">
+		<div class="task-icons">
+			<div class="task-icon-ssuper">
+				<a href="Desktop.html">
+					<img src="/Simple OS/system/icons/super-button.svg" style="height: 40px; ">
+				  </a> 
+			</div>
+		</div>
+		<div class="task-icon-file">
+			<a href="/Simple OS/system/File manager.html">
+				<img src="/Simple OS/system/icons/file browz.svg" alt="">
+			</a>
+		</div>
+		<div class="task-icon-browse">
+			<a href="browser.html">
+				<img src="/Simple OS/system/icons/browse.svg" alt="">
+			</a>
+		</div>
+		<div class="task-icon-settings">
+			<a href="settings.html">
+				<img src="/Simple OS/system/icons/settings.svg" alt="">
+			</a>
+		</div>
+		<div class="task-icon-todo">
+			<a href="/Simple OS/User/Applications/todo/1.html">
+				<img src="/Simple OS/system/icons/todo.svg" alt="">
+			</a>
+		</div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+		</div>
+	</div>
+	<div class="start-ar"><br><br><br><br><br><br><br><br>
+	<div class="start" ><a href="/Simple OS/User/Applications/Lost.html">Lost - game (Receantly added using packages)</a><br> <a href="package.html">Package Manager</a><br><div class="start-r"><a href="/Simple OS/system/launcher.html">Switch off⚫</a>
+		<br><a href="/Simple OS/system/settings.html" class="spinhov">⚙ Settings.</a>  </div> </div>
+	</div>
+</body>
+</html>

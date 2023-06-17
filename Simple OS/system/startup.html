@@ -1,0 +1,141 @@
+
+	<img src="/daniel-leone-v7daTKlZzaw-unsplash.jpg" class="bg"width="100%" height="100%" >
+<body>	
+	<div class="container">		
+		<section>
+			<img src="/Simple OS/system/icons/user.svg" alt="" height="150px" width="150px">
+			<h3>Hello,User</h3><br>
+
+<button class="popup-btn">Not you?</button>
+<div class="popup-menu">
+  <ul>
+    <a href="#">User 1</a><br>
+    <a href="#">Backdoor</a><br>
+    <a href="#">Administator</a><br> 
+  </ul>
+</div>		</section>
+		<form action="Desktop.html">
+			<input type="text" placeholder="         Enter password">
+			<button class="btn">Login</button>
+		</form>
+	</div>
+</body>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Monsterrat:wght@200&display=swap');
+	body {
+		padding: none;
+		border-radius: none;
+		background-image: linear-gradient(rgb(19, 19, 19),rgb(22, 19, 19));
+	}
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		color: rgb(166, 166, 255);
+	}
+	.bg {
+		border-radius: none;
+		
+	}
+	.container {
+		border-radius: 50px;
+		height: 300px;
+		width: 500px;
+		display: flex;
+		text-align: center;
+		position: absolute;
+		top: 15%;
+		left:33%;
+	}
+	form {
+		padding-top: 100px;
+		padding-left: 50px;
+		background-color: rgb(37, 37, 38);
+		width: inherit;
+		height: 200px;
+		border-top-right-radius: 50px;
+		border-bottom-right-radius: 50px;
+	}
+	section {
+		text-align: center;
+		backdrop-filter: blur(10px);
+		background-color: rgba(0,0,0, .60);
+		border-top-left-radius: 50px;
+		border-bottom-left-radius: 50px;
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: white;
+		font-family: 'Monsterrat', sans-serif;
+	}
+	input {
+		border-radius: 50px;
+		height: 35px;
+		border: none;
+	}
+	.btn {
+		height: 35px;
+		border-radius: 50px;
+		background-image:linear-gradient(to bottom right, rgb(83, 132, 137),rgb(189, 216, 219));
+		border: none;
+	}
+	img {
+		border-radius: 50px;
+	}
+	.popup-menu {
+		display: none;
+		position: absolute;
+		backdrop-filter: blur(10px);
+		background-color: rgba(0,0,0, .60);
+		border-radius: 20px;
+		color: white;
+		text-decoration: none;
+		border-radius: 20px;
+		width: 150px;
+	  
+	  }
+	   .popup-btn {
+		  background-color: rgba(0,0,0, .60);
+		  backdrop-filter: blur(5px);
+		  border: none;
+		  border-radius: 20px;
+		  color:white;
+		  text-size-adjust: 40px;
+		  backdrop-filter: blur(10px);
+	   }
+	   .popup-btn:hover {
+		  background-color: none;
+		  border: none;
+		  border-radius: none;
+		  color: rgb(166, 166, 255);
+	   }
+	  
+	  .popup-menu li {
+		padding: 8px 12px;
+		cursor: pointer;
+	  }
+	  
+	  .popup-btn:hover + .popup-menu {
+		display: block;
+	  text-decoration: none;
+	  }
+	  
+	  .popup-btn:focus + .popup-menu {
+		display: block;
+		color: white;
+		text-decoration: none;
+	  }
+	  
+</style>
+<script>
+	function users() {
+		Element("users").style.display = "block"
+	}
+
+
+const users = [
+	"User 1",
+	"Administator"
+]
+</script>

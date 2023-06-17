@@ -1,0 +1,406 @@
+<!--  XSG creation frame. Simple OS licenced usage.. Devoloped by K -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+	<title>My Page</title>
+	<style>
+		body {
+			background-color: #fff;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			overflow: hidden;
+			height: 100%;
+		}
+
+		.taskbar {
+			position: absolute;
+			bottom: 10px;
+			left: 33%;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+			color: white;
+			display: flex;
+			align-items: center;
+			padding: 10px;
+            border-radius: 20px;
+		}
+
+		.taskbar img {
+			height: 40px;
+			margin-right: 10px;
+		}
+
+		.taskbar .task-icons {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1000px;
+			flex-grow: 1;
+			justify-content: center;
+		}
+
+		.taskbar .task-icon {
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			border-radius: 50%;
+			background-color: #5292af;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		.taskbar .task-icon:hover {
+			background-color: #333;
+		}
+		.start {
+			background-color: rgba(0, 0, 0, 0.6);
+			border-radius: 20px;
+			width: 30%;
+			position: absolute;
+			top: 100px;
+			height: 300px;
+			padding-top: 10px;
+            backdrop-filter: blur(10px);
+		}
+		.start-ar {
+			padding-left: 40%;
+			width: 100%;
+			align-self: center;
+		}
+		.start-r {
+			align-items: end;
+		}
+			a {
+				text-decoration: none; /* Removes underline */
+				color: #fff; /* Changes link color to blue */
+			  }
+		a:hover {
+			color: #5292af;
+		}
+        .container-out {
+            font-family: "Fira Sans", sans-serif;
+            padding-top: 0px;
+            padding: 15px 0;
+            }
+            
+            .container-in {
+            width: 95%;
+            margin: 0 auto;
+            }
+            
+            .search-container {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 15px;
+            }
+            
+            .search-title {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #1ca0b8;
+            }
+            
+            #search-input {
+            width: 70%;
+            padding: 13px;
+            border-radius: 20px;
+            border: 2px solid #383838;
+            font-size: 15px;
+            }
+            
+            #search-input:focus {
+            outline: none;
+            border-radius: 20px;
+            }
+            
+            #search-results {
+            position: absolute;
+            z-index: 10;
+            margin: 1px auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 70%;
+            text-align: center;
+            border-radius: 20px;
+            display: none;
+            }
+            .search-item {
+            color: white;
+            cursor: pointer;
+            }
+            .search-item p {
+            margin: 0;
+            padding: 10px;
+            }
+            .search-item:hover {
+            background: #5292af;
+            border-radius: 20px;
+            }
+            #search-data {
+            margin-top: 10px;
+            color: #5292af;
+            }
+            #search-data p {
+            margin: 0;
+            padding: 6px;
+            font-size: 16px;
+            }
+            #search-results:hover {
+                border-radius: 20px;
+            }
+            #sr1 {
+                top: 20px;
+                padding-top: 50px;
+                padding-left: 14%;
+            }
+            /*    Topbar like gnome  */
+            .topbar {
+                position: absolute;
+                top: 0px;
+                height: 50px;
+                backdrop-filter: blur(10px);
+                background-color: rgba(0, 0, 0, 0.6);
+                width: 100%;
+                color: white;
+            }
+            time {
+                padding-top: none;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                align-items: center;
+                align-self: center;
+            }
+            time:hover {
+                background-color: #858585;
+            }
+            #p1{
+                font-size: 20px;
+                padding-top: none;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+            }
+            #p1:hover {
+                background-color: rgba(88, 88, 88,.6);
+                width: 100px;
+                height: 20px;
+                border-radius: 20px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                left: 49.25%;
+            }
+            .apps{
+                text-align: left;
+            }
+            #p2{
+                position: absolute;
+                left: 5px;
+                
+            }
+            #p2:hover {
+                background-color: rgba(88, 88, 88,.6);
+                width: 270px;
+                height: 20px;
+                padding-top: 5px;
+                padding-bottom: 3px;
+                border-radius: 20px;
+                padding-left: 10px;
+            }
+            .status {
+                position: absolute;
+                right: 5px;
+                
+            }
+            .srch-btn {
+                position: absolute;
+                background-color: #1ca0b8;
+                color: white;
+                border-radius: 20px;
+                border: none;
+                right: 220px;
+                top: 0px;
+                width: 50px;
+                height: 50px;
+            }
+	</style>
+</head>
+<body>
+    <img src="wallppr-1.png" style="width:100%;height: 100%; ;" draggable="false" >
+	<div class="taskbar">
+		<img src="">
+		<div class="task-icons">
+			<div class="task-icon-super">
+				<a href="desktop with start.html">
+					<img src="/Simple OS/system/icons/super-button.svg" style="height: 40px; ">
+				  </a> 
+			</div>
+			<div class="task-icon-file">
+                <a href="/Simple OS/system/File manager.html">
+                    <img src="/Simple OS/system/icons/file browz.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-browse">
+                <a href="browser.html">
+                    <img src="/Simple OS/system/icons/browse.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-settings">
+                <a href="settings.html">
+                    <img src="/Simple OS/system/icons/settings.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon-todo">
+                <a href="/Simple OS/User/Applications/todo/todo.html">
+                    <img src="/Simple OS/system/icons/todo.svg" alt="">
+                </a>
+            </div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+			<div class="task-icon"></div>
+		</div>
+	</div>
+
+    <div  class="topbar">
+        <div class="apps">
+            <p id="p2">Launcher.browser.support v0.32</p>
+        </div>
+        <div class="time">
+            <p id="p1" class="clock"></p>
+        </div>
+        <div class="status">
+            <!-- battery, settings, shutdown -->
+            <!-- also add serach in the left and notification in the right (most) -->
+            <!-- topbar also in todo -->
+            <div class="search-engine">
+                <input
+                    type="input"
+                    id="search-input"
+                    autocomplete="off"
+                    placeholder="Search"
+                />
+                </div> <div id="sr1"><div id="search-results"></div></div>
+            <div id="search-data"></div>
+        <button class="srch-btn">Search</button>
+        </div>
+    </div>
+
+	<div class="start-ar"><br><br><br><br><br><br><br><br>
+	<div class="start" >
+        <p id="p1" class="clock"></p>
+        
+  <a href="/Simple OS/system/set1.html">Finish setting up this Device  >> </a>
+</div> </div>
+	</div>
+</body>
+</html>
+ <script>
+var date = new Date();
+	var current_time = date.getHours()+":"+date.getMinutes()+":"+ date.getSeconds();
+	document.getElementById("p1").innerHTML = current_time;
+
+    //shortens document.getElementById
+function element(id) {
+    return document.getElementById(id);
+    }
+    let allSearchData = ""; //decleared to collect all search names
+    
+    //gets each inputs data starting from second input
+    function getResults() {
+    //gets value of input
+    let search = element("search-input").value;
+    allSearchData = ""; //clears data for each word typed
+    
+    hideSearchResults();
+    clearSearchResults();
+    clearSearchData(); //
+    //starts searching from the second input
+    if (search.length > 0) {
+        let counter = 0; // counts to 10
+        for (let x of names) {
+        if (counter < 10) {
+            //checks for similarities
+            if (x.toLowerCase().includes(search.toLowerCase())) {
+            //populates the suggestion div
+            element("search-results").innerHTML +=
+                "<div class='search-item' onclick='displayData(\"" +
+                x +
+                "\")'><p>" +
+                x +
+                "</p></div>";
+    
+            counter++;
+            }
+        }
+        if (x.toLowerCase().includes(search.toLowerCase()))
+            //saves all the realated names
+            allSearchData += "<p>" + x + "</p>";
+        }
+        displaySearchResults();
+    }
+    }
+    //displays the suggestion div
+    function displaySearchResults() {
+    element("search-results").style.display = "block";
+    }
+    //clears the suggestion div
+    function clearSearchResults() {
+    element("search-results").innerHTML = "";
+    }
+    
+    //hides the suggestion div
+    function hideSearchResults() {
+    element("search-results").style.display = "none";
+    }
+    //displays names when you click a suggestions
+    function displayData(name) {
+    element("search-data").innerHTML = "<p>" + name + "</p>";
+    hideSearchResults();
+    }
+    //displays all related names to your search when you hit enter
+    function displayAllData(names) {
+    element("search-data").innerHTML = names;
+    hideSearchResults();
+    }
+    //clears names displayed from search result
+    function clearSearchData() {
+    element("search-data").innerHTML = "";
+    }
+    //gets results after each input
+    element("search-input").oninput = function() {
+    getResults();
+    };
+    
+    element("search-input").addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        displayAllData(allSearchData);
+    }
+
+    const button = document.querySelector('.srch-btn');
+
+    button.addEventListener('click', () => {
+        displayAllData(allSearchData);
+    });
+    });
+ </script>
+ <script src="database.js"></script>

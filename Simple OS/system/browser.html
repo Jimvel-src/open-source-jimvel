@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Arc Browser</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+        <section id="search">
+              <a class="close" href="#"> <img src="/Simple OS/system/icons/x.svg" alt="" height="40px" width="40px"></a> 
+              <div class="navigation">
+                <div class="icon-hide">
+                <button type="submit" id="back"><i class="fa-solid fa-arrow-left"></i></button>
+                <button type="submit" id="forward"><i class="fa-solid fa-arrow-right"></i></button>
+                <button type="submit" id="reload"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+              </div>
+              </div>
+              <input type="text" placeholder="Search...">
+              <button type="submit" id="search-button">→</button>
+        </section>
+        <ul>
+        <li><a href="#"  class="a">Tab1  </a></li>
+        <li><a href="#" class="a">Tab2  </a></li>
+        <li><a href="#"  class="a">Tab3  </a></li>
+        <li><a href="#" class="a">Tab4  </a></li>
+      </ul>
+    </nav>
+    <div class="cont3"><iframe src="" frameborder="0" ></iframe></div>
+  </body>
+</html>
+<style>
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  /* Navbar styles */
+  nav {
+    background-color: #333;
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav ul {
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    height: 50px;
+    list-style: none;
+    position: absolute;
+    left: 400px;
+    top: 20px;
+    border-left:#f5f5f5 1px solid;
+    border-radius: 20px;
+  }
+  
+  nav li {
+    margin-bottom: 20px;
+    padding-right: 40px;
+  }
+  
+  nav .a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+  }
+  
+  nav .a:hover {
+    text-decoration: none;
+    background-color:rgb(88, 88, 88);
+  }
+  nav .a:focus {
+    background-color: rgb(88, 88, 88);
+    border: #1d1d1d 1px solid;
+  }
+  
+  /* Main content styles */
+  main {
+    margin-left: 220px;
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 0px;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  section ul {
+    list-style: none;
+    padding-top : 100px ;
+  }
+  
+  section li {
+    margin-bottom: 10px;
+  }
+  
+  section a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  section a:hover {
+    text-decoration: underline;
+  }
+  
+  #search {
+    text-align: center;
+    left: 0px;
+    padding-left: 0px;
+  }
+  
+  #search input[type="text"] {
+    position: absolute;
+    left: 140px;
+    top: 5px;
+    padding: 10px;
+    padding-right: 0px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+  
+  #search-button {
+    position: absolute;
+    left: 350px;
+    top: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #search-button:hover {
+    background-color: #222;
+  }
+  .cont2 {
+    padding-top: 0px;
+  }
+  .cont1 {
+    padding-left: 0px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+  iframe {
+    border-top: #333 5px;
+    border-right: #333 5px;
+    border-bottom: #333 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .cont3 {
+    padding-left: 220px;
+    border-top: #333 5px;
+    border-right: #333 5px;
+    border-bottom: #333 5px;
+  }
+  .close {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 360px;
+    width: 40px;
+    height: 40px;
+  }
+  .close:hover {
+    background-color: #fff;
+  }
+  .navigation {
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    position: absolute;
+    left: 60px;
+    top: 20px;
+  }
+  .navigation:hover {
+    border: #fff 2px solid;
+    width: 70px;
+  }
+
+  .icon-hide {
+    display: block;
+  }
+  .navigation:hover + .icon-hide {
+    display: inline;
+    color: #fff;
+  }
+  i {
+    color: white;
+
+  }
+</style>

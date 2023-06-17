@@ -1,0 +1,12 @@
+import.package("gloss_backview")
+import.package("tohtmlas")
+object.load("gloss_backview")
+package.useonall("tohtmlas")‭
+object.add.'uoa'.textobject("Login here")
+object.add.'uoa'.edittext.internal("")
+object.add.'uoa'.edittext.internal("")
+object.add.'uoa'button("Login")
+design.base{
+design.background.packages.parts.("gloss_backview")
+design.'uoa'.style.basic
+}

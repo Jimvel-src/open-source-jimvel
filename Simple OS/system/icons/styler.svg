@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="2000px"
+   height="2000px"
+   viewBox="0 0 2000 2000"
+   version="1.1"
+   id="SVGRoot"
+   sodipodi:docname="styler.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5415"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="0.12183786"
+     inkscape:cx="98.491553"
+     inkscape:cy="952.08501"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5410">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6056">
+      <stop
+         style="stop-color:#2879d8;stop-opacity:1;"
+         offset="0"
+         id="stop6052" />
+      <stop
+         style="stop-color:#c928d8;stop-opacity:0.95138896;"
+         offset="1"
+         id="stop6054" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6056"
+       id="linearGradient6060"
+       x1="328.30518"
+       y1="1021.8499"
+       x2="1682.5641"
+       y2="1021.8499"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.4768225,0,0,1.5325517,-484.84844,-566.03774)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#linearGradient6060);fill-opacity:1;stroke-width:1.00157"
+       id="rect5905"
+       width="2000"
+       height="2000"
+       x="0"
+       y="0"
+       rx="348.82401"
+       ry="348.82425" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.0016"
+       id="rect6224"
+       width="340.64789"
+       height="1401.8857"
+       x="1302.9404"
+       y="-890.24292"
+       rx="250.76582"
+       ry="246.8775"
+       transform="matrix(0.76450168,0.64462173,-0.6518697,0.758331,0,0)" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke-width:1.00696"
+       id="path7004"
+       cx="1495.0743"
+       cy="44.983181"
+       rx="236.38647"
+       ry="435.14731"
+       transform="matrix(0.4430945,0.89647491,-0.8223205,0.5690246,0,0)" />
+  </g>
+</svg>
