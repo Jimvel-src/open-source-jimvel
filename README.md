@@ -1,2 +1,3 @@
-Welcome to the open-sorce repository of Jimvel
-This is the Simple OS 5.0091673 Devoloper preview...
+Welcome to the open-sorce repository of Jimvel.
+This is the place where we dump the folders of our new updates,
+of Simple OS
