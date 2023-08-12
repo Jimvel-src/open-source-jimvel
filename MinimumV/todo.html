@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+
+
+  <h1>Todo List</h1><button id="close-button" title="Close"  onclick="window.location.href='/Simple OS/system/Desktop.html'">
+    Open The VM
+  </button> 
+  <form>
+    <input type="text" id="todoInput" placeholder="Add task...">
+    <button type="button" class="button" onclick="addTodo()">Add</button>
+  </form>
+  <ul id="todoList">
+  </ul>
+
+  <script>
+    let todoList = [];
+
+function addTodo() {
+  let todoInput = document.getElementById("todoInput");
+  let todoText = todoInput.value.trim();
+
+  if (todoText !== "") {
+    let todoItem = { text: todoText };
+    todoList.push(todoItem);
+    saveTodoList();
+
+    let todoListElement = document.getElementById("todoList");
+    let todoItemElement = document.createElement("li");
+    todoItemElement.innerHTML = `<span class="todo-text">${todoText}</span><button class="todo-delete" onclick="deleteTodoItem(this)">Delete</button>`;
+    todoListElement.appendChild(todoItemElement);
+
+    todoInput.value = "";
+  }
+}
+
+function deleteTodoItem(deleteButtonElement) {
+  let todoItemElement = deleteButtonElement.parentElement;
+  let todoItemIndex = Array.prototype.indexOf.call(todoItemElement.parentElement.children, todoItemElement);
+
+  todoList.splice(todoItemIndex, 1);
+  saveTodoList();
+
+  todoItemElement.remove();
+}
+
+function loadTodoList() {
+  let storedTodoList = localStorage.getItem("todoList");
+
+  if (storedTodoList) {
+    todoList = JSON.parse(storedTodoList);
+
+    let todoListElement = document.getElementById("todoList");
+
+    for (let todoItem of todoList) {
+      let todoItemElement = document.createElement("li");
+      todoItemElement.innerHTML = `<span class="todo-text">${todoItem.text}</span><button class="todo-delete" onclick="deleteTodoItem(this)">Delete</button>`;
+      todoListElement.appendChild(todoItemElement);
+    }
+  }
+}
+
+function saveTodoList() {
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+}
+
+window.onload = function() {
+  loadTodoList();
+};
+
+  </script>
+</body>
+</html>
+<style>
+      
+      h1 {
+        text-align: center;
+        top: 10px;
+        padding-top: none;
+      }
+      
+      form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        margin-right: 10px;
+      }
+      
+      .button {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        background-color: #4CAF50;
+        color: #FFFFFF;
+        cursor: pointer;
+      }
+      
+      .button:hover {
+        background-color: #3E8E41;
+      }
+      
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      
+      .todo-text {
+        flex-grow: 1;
+      }
+      
+      .todo-delete {
+        background-color: #f44336;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+      }
+      
+      .todo-delete:hover {
+        background-color: #d32f2f;
+      }
+      .div {
+        backdrop-filter: blur(10px);
+        background-color:rgba(0, 0, 0, .60) ;
+        border-radius: 20px;
+        padding-bottom: 20px;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .background-image {
+        background-image: url('your-image-url-here');
+        background-position: center;
+        height: 100%;
+        width: 100%;
+      }
+      #close-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        position: absolute;
+        right: 5x;
+        top: 20px;
+      }
+      .close:hover {
+        background-color: #FFFFFF;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+      }
+      
+      body {
+        overflow: hidden;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: none;
+        margin: none;
+        height: 100%;
+        width: 100%;
+        color: white;
+    }
+    
+</style>
+
