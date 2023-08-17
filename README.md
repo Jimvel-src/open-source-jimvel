@@ -8,3 +8,5 @@ Help build the Simple OS and we are calling you!
 ## Building a core
 Curreently we need help building an open-source community-devoloped core!
 Without you, Simple OS can't come true 
+  Contribute to us by finding the JSOS Kernel repo and pull requesting it.
+(it may take some time because we are'nt online 24/7)
