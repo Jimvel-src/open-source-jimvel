@@ -3,6 +3,10 @@ Welcome to the open-sorce repository of Jimvel.
 This is the place where we dump the folders of our new updates,
 of Simple OS
 
+## Preview 
+The MinimumV 
+![Uploading Screenshot 2023-07-31 184937.png…]()
+
 ## Get a copy
 
 ```bash
